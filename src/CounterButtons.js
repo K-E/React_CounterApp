@@ -1,24 +1,23 @@
-import { useState } from "react"
-import './CounterButtons.css'
+import './Counter.css'
 import {PropTypes} from 'prop-types'
 
 
-export default function CounterButtons({by}){
-    const [count, setCount] = useState(0)
+export default function CounterButtons({by, parentIncrement, parentDecrement}){
+
+    function increment(){
+        parentIncrement(by)
+    }
+    function decrement(){
+        parentDecrement(by)
+    }
+
     return(
-        <div className = "box">
-            <button onClick={incrementCount} className="cButton">+{by}</button>
-            <span className="counter">{count}</span>
+        <div className = "">
+            <button onClick={increment} className="cButton">+{by}</button>
             <span></span>
-            <button onClick={decrementCount} className="cButton">-{by}</button>
+            <button onClick={decrement} className="cButton">-{by}</button>
         </div>
     )
-    function incrementCount(){
-        setCount(count + by)
-    }
-    function decrementCount(){
-        setCount(count - by)
-    }
 }
 
 CounterButtons.propTypes = {
