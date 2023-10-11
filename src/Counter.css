@@ -12,6 +12,7 @@
 }
 
 .cButton{
+    width:75px;
     margin: 25px;
     padding: 15px;
     background-color:color-mix(in hsl shorter hue, color percentage, color percentage);
